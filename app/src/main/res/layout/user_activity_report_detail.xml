@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="android.content.Context" />
+
+        <variable
+            name="item"
+            type="com.bagus.purchasingapp_mtn.model.Report.Data" />
+
+        <variable
+            name="viewModel"
+            type="com.bagus.purchasingapp_mtn.ui.user_main.detail.UserReportDetailViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundColor">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                app:cardCornerRadius="@dimen/cardCorner"
+                app:cardElevation="@dimen/elevation">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/photo"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:scaleType="centerCrop"
+                        android:src="@color/colorPrimary"
+                        android:transitionName="img"
+                        tools:ignore="UnusedAttribute" />
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:textSize="21sp"
+                        android:textColor="@color/colorTextBlack"
+                        android:text="@{item.reportTitle}"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:textSize="17sp"
+                        android:text="@{item.reportDescription}"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:text="@{`Location : ` + item.reportLocation}"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:text="@{item.reportCreateAt}"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorTextBlack"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:id="@+id/layoutStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0"
+                        android:gravity="end"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/res_oval"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginStart="5dp" />
+
+                        <TextView
+                            android:id="@+id/tv_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingBottom="5dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="5dp"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold"
+                            android:textSize="11sp"
+                            tools:ignore="SmallSp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="@dimen/cardCorner"
+                app:cardElevation="@dimen/elevation">
+
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:text="Report By"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:textColor="@color/colorPrimaryLight"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/report_by"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="6dp"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="21sp"
+                    android:text="@{item.reportByUser.userName}" />
+
+                <View
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/greyLight"
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp" />
+
+                <TextView
+                    android:text="User"
+                    android:gravity="end"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:visibility="@{item.isPending(item.reportStatus) ? View.GONE : View.VISIBLE}"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent">
+                    <TextView
+                        android:text="Checked By"
+                        android:textStyle="bold"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:textColor="@color/colorPrimaryLight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+    
+                    <TextView
+                        android:id="@+id/checked_by"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:textColor="@color/colorTextBlack"
+                        android:textSize="21sp"
+                        android:text="@{item.reportByMaintenance.userName}" />
+    
+                    <View
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/greyLight"
+                        android:layout_width="match_parent"
+                        android:layout_height="1.5dp" />
+    
+                    <TextView
+                        android:text="Maintenance"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:gravity="end"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="@{item.isPending(item.reportStatus) ? View.GONE : View.VISIBLE}"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent">
+                    <TextView
+                        android:text="Approved By"
+                        android:textStyle="bold"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:textColor="@color/colorPrimaryLight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+    
+                    <TextView
+    
+                        android:id="@+id/approved_by"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:textColor="@color/colorTextBlack"
+                        android:textSize="21sp"
+                        android:text="@{item.reportByAdmin.userName}" />
+                    <View
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/greyLight"
+                        android:layout_width="match_parent"
+                        android:layout_height="1.5dp" />
+                    <TextView
+                        android:text="Admin"
+                        android:gravity="end"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:text="@{`Last Modifed : ` + item.reportLastModifed}"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="16dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorTextBlack"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/layout"
+                android:orientation="vertical"
+                android:layout_marginBottom="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:visibility="@{item.isPending(item.reportStatus) ? View.VISIBLE : View.GONE}"
+                    android:id="@+id/proccess"
+                    android:text="PROCESS"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_label_status_green"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <Button
+                    android:visibility="@{item.isProcessed(item.reportStatus) ? View.VISIBLE : View.GONE}"
+                    android:id="@+id/repair"
+                    android:text="REPAIR"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_label_status_blue"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/purchase"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/bg_label_status_blue_dark"
+                    android:text="BUAT PERMINTAAN PURCHASE"
+                    android:textColor="@color/white"
+                    android:visibility="@{item.isProcessed(item.reportStatus) ? View.VISIBLE: View.GONE}" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</layout>

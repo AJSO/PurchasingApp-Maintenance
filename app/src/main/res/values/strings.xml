@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Maintenance - PurchasingApp</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nik">NIK</string>
+    <string name="password">Password</string>
+    <string name="ingat_saya">Remember Me</string>
+    <string name="login">LOGIN</string>
+    <string name="my_profile">MY PROFILE</string>
+    <string name="home">HOME</string>
+    <string name="notification">NOTIFICATION</string>
+    <string name="logout">LOGOUT</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+    <string name="position">Position</string>
+    <string name="level">Level</string>
+    <string name="update">Update</string>
+    <string name="update_password">Update Password</string>
+    <string name="passwordconfirm">Confirm New Password</string>
+    <string name="passwordcurrent">Current Password</string>
+    <string name="passwordnew">New Password</string>
+    <string name="check_internet">Please check your internet connection!</string>
+</resources>
